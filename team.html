@@ -5,6 +5,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="images.css">
+<link rel="stylesheet" href="pics.css">
 </head><body>
 <nav>
 <a class="brand" href="index.html"><span class="logo" role="img" aria-label="Miami City Roleplay logo"></span><span>Miami City Roleplay</span></a>
@@ -18,17 +19,17 @@
 <script>
 /* EDIT HERE: add a photo with  img:"name.png"  and write a bio in  about  */
 const team=[
-{rank:"Owner",name:"Original",about:"Write Original's About Me here."},
-{rank:"Co Owner",name:"r4in",about:"Write r4in's About Me here."},
-{rank:"Director",name:"folt",about:"Write folt's About Me here."},
-{rank:"Deputy Director",name:"henry2shifty",about:"Write henry2shifty's About Me here."},
-{rank:"Assistant Director",name:"robloxcringekid",about:"Write robloxcringekid's About Me here."},
-{rank:"Assistant Director",name:"Yubel",about:"Write Yubel's About Me here."}
+{rank:"Owner",name:"Original",pic:"original",about:"Write Original's About Me here."},
+{rank:"Co Owner",name:"r4in",pic:"r4in",about:"Write r4in's About Me here."},
+{rank:"Director",name:"folt",pic:"folt",about:"Write folt's About Me here."},
+{rank:"Deputy Director",name:"henry2shifty",pic:"henry",about:"Write henry2shifty's About Me here."},
+{rank:"Assistant Director",name:"robloxcringekid",pic:"robloxcringekid",about:"Write robloxcringekid's About Me here."},
+{rank:"Assistant Director",name:"Yubel",pic:"yubel",about:"Write Yubel's About Me here."}
 ];
 const box=document.getElementById("team");
 team.forEach(m=>{
 const c=document.createElement("div");c.className="card staff";
-const pic=m.img?`<img class="avatar" src="${m.img}" alt="${m.name}">`:`<div class="avatar" aria-hidden="true">${m.name[0].toUpperCase()}</div>`;
+const pic=m.pic?`<div class="avatar pic-${m.pic}" role="img" aria-label="${m.name}"></div>`:`<div class="avatar" aria-hidden="true">${m.name[0].toUpperCase()}</div>`;
 c.innerHTML=`${pic}<div class="rank">${m.rank}</div><h3>${m.name}</h3><button class="about" aria-expanded="false">About Me</button><p class="bio">${m.about}</p>`;
 const b=c.querySelector("button"),p=c.querySelector(".bio");
 b.onclick=()=>{const o=p.classList.toggle("open");b.setAttribute("aria-expanded",o)};
